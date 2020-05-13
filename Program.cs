@@ -13,7 +13,7 @@ namespace all_cards_on_deck
       var ranks = new List<string>() { "2", "3", "4", "5", "6", "7", "8", "9", "10","Jack", "Queen", "King", "Ace",};
       var deck = new List<string>();
 
-      //
+      // assign and combine values to each card
       for (var suitIndex = 0; suitIndex < suits.Count(); suitIndex++)
       {
        for (var rankIndex = 0; rankIndex < ranks.Count(); rankIndex++)
@@ -34,7 +34,10 @@ namespace all_cards_on_deck
        Random rnd = new Random();
        var secondIndex = rnd.Next(firstIndex); 
      //Now swap the values at firstIndex and secondIndex by doing this:
-
+     var firstValue = deck[firstIndex];
+     var secondValue = deck[secondIndex];
+     deck[firstIndex] = secondValue;
+     deck[secondIndex] = firstValue;
      //firstValue = the value from items[firstIndex]
      //secondValue = the value from items[secondIndex]
      //items[firstIndex] = secondValue
