@@ -25,25 +25,27 @@ namespace all_cards_on_deck
        }
       }
       
-      // make n = 52 since we are dealing with 52 elements
-      var n = 52;
+     // make n = 52 since we are dealing with 52 elements
+     var n = 52;
      //for firstIndex from n - 1 down to 1 do:
      for (var firstIndex = n-1; firstIndex >= 1; firstIndex--)
      {
-     //secondIndex = random integer that is greater than or equal to 0 and LESS than firstIndex
+      //secondIndex = random integer that is greater than or equal to 0 and LESS than firstIndex
        Random rnd = new Random();
        var secondIndex = rnd.Next(firstIndex); 
-     //Now swap the values at firstIndex and secondIndex by doing this:
-     var firstValue = deck[firstIndex];
-     var secondValue = deck[secondIndex];
-     deck[firstIndex] = secondValue;
-     deck[secondIndex] = firstValue;
-     //firstValue = the value from items[firstIndex]
-     //secondValue = the value from items[secondIndex]
-     //items[firstIndex] = secondValue
-     //items[secondIndex] = firstValue
+      //Now swap the values at firstIndex and secondIndex by doing this:
+      //firstValue = the value from items[firstIndex]
+      var firstValue = deck[firstIndex];
+      //secondValue = the value from items[secondIndex]
+      var secondValue = deck[secondIndex];
+      //items[firstIndex] = secondValue
+      deck[firstIndex] = secondValue;
+      //items[secondIndex] = firstValue
+      deck[secondIndex] = firstValue;
      }
-     
+     // writes first two values to terminal
+     Console.WriteLine(deck[0]);
+     Console.WriteLine(deck[1]);
 
 
     }
